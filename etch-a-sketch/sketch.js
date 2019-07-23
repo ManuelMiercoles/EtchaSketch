@@ -1,8 +1,7 @@
 
 $(document).ready(function() {
 	
-	//populates the page on initial load
-  
+	//Fills page with initial 16x16 grid on load.
   var divs = "";
 	for (var i = 1;  i <= 256;  i++) {
 		divs += '<div class="squares" id='+i+' value="0"  style="background-color: rgb(13,13,12);"></div>';
@@ -13,22 +12,19 @@ $(document).ready(function() {
       var color = '#' + Math.random().toString(16).substring(2, 8);
       $(this).css("background-color", color); 
       $('.squares').attr('value', color);
-      
-      
-        
         
   });
 
 $('squares').mouseenter(function() {
-  
+  //failed attempt to include a function that would fade to black a div over several mouseenters.
   var inputColor = $(this).css("background-color",color),
-  brightness = '#'+ (10).toString(16).substring(2, 8),
+  brightness = '#'+ (-10).toString(16).substring(2, 8),
   outputColor = getNewBrightnessColor(inputColor, brightness);
   $('squares').css('background-color');
   $('#original_brightness').text(inputColor);
   $('#origin_color').css('background-color', inputColor);
   $('.squares').css('background-color', outputColor);
- // $(this).addClass("over");
+ 
 });
 	
 	$('#16x16').click(function() {
@@ -39,13 +35,13 @@ $('squares').mouseenter(function() {
       $('squares').mouseenter(function() {
   
         var inputColor = $(this).css("background-color",color),
-        brightness = '#'+ (10).toString(16).substring(2, 8),
+        brightness = '#'+ (-10).toString(16).substring(2, 8),
         outputColor = getNewBrightnessColor(inputColor, brightness);
         $('squares').css('background-color');
         $('#original_brightness').text(inputColor);
         $('#origin_color').css('background-color', inputColor);
         $('.squares').css('background-color', outputColor);
-       // $(this).addClass("over");
+     
       });
       
       
@@ -60,13 +56,13 @@ $('squares').mouseenter(function() {
       $('squares').mouseenter(function() {
   
         var inputColor = $(this).css("background-color",color),
-        brightness = '#'+ (10).toString(16).substring(2, 8),
+        brightness = '#'+ (-10).toString(16).substring(2, 8),
         outputColor = getNewBrightnessColor(inputColor, brightness);
         $('squares').css('background-color');
         $('#original_brightness').text(inputColor);
         $('#origin_color').css('background-color', inputColor);
         $('.squares').css('background-color', outputColor);
-       // $(this).addClass("over");
+       
       });
       
 		});
@@ -85,7 +81,7 @@ $('squares').mouseenter(function() {
         $('#original_brightness').text(inputColor);
         $('#origin_color').css('background-color', inputColor);
         $('.squares').css('background-color', outputColor);
-       // $(this).addClass("over");
+       
       });
       
      
@@ -94,7 +90,7 @@ $('squares').mouseenter(function() {
 	
 });
 
-
+//functions for creating 16x16 grid, 64x64 grid, and clearing grid.
 	function populate16x16() {
     var count= $('div.squares').length;
 		var temp = "";
@@ -152,12 +148,13 @@ $('squares').mouseenter(function() {
     $('.squares').css('width', height);
   }
   }
+  //Found functions to change brightness of html element on interaction on StackOverflow, couldn't implement them properly.
 function getNewBrightnessColor(rgbcode, brightness) {
   var r = parseInt(rgbcode.slice(1, 3), 16),
       g = parseInt(rgbcode.slice(3, 5), 16),
       b = parseInt(rgbcode.slice(5, 7), 16),
       HSL = rgbToHsl(r, g, b),
-      newBrightness = HSL[2] + HSL[2] * (brightness / -100), 
+      newBrightness = HSL[2] + HSL[2] * (brightness / 100), 
       RGB;
       
   $('#original_brightness').text(HSL[2] * 100);

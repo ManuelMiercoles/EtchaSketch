@@ -25,13 +25,8 @@ header {
 	overflow:hidden;
 }
 
-.over {
-	filter:brightness(90%);
-
-	opacity: 1; 
-
 		
-}
+
 
 .button {
 	margin-left:10px;
