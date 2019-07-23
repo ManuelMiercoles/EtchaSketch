@@ -103,7 +103,7 @@ $('squares').mouseenter(function() {
 			temp += div;
 		};
 		$(".wrapper").append(temp);
-		var height = 640 / input;
+		var height = 520 / input;
 		$('.squares').css('height', height);
 		$('.squares').css('width', height);
 	}
@@ -119,7 +119,7 @@ $('squares').mouseenter(function() {
 			temp += div;
 		};
 		$(".wrapper").append(temp);
-		var height = 640 / input;
+		var height = 520 / input;
 		$('.squares').css('height', height);
 		$('.squares').css('width', height);
 }
@@ -133,7 +133,7 @@ $('squares').mouseenter(function() {
 			temp += div;
 		};
 		$(".wrapper").append(temp);
-		var height = 640/16;
+		var height = 520/16;
 		$('.squares').css('height', height);
     $('.squares').css('width', height);
   }
@@ -143,7 +143,7 @@ $('squares').mouseenter(function() {
 			temp += div;
 		};
 		$(".wrapper").append(temp);
-		var height = 640/64;
+		var height = 520/64;
 		$('.squares').css('height', height);
     $('.squares').css('width', height);
   }
