@@ -1,0 +1,40 @@
+header {
+	display:block;
+	text-align:center;
+	margin:auto;
+}
+
+.squares {
+	
+	width: 40px;
+    height: 40px;
+    display:inline-block;
+    margin: 0; 
+    
+}
+
+.wrapper {
+	
+	height:500px;
+	width:500px;
+	display:block;
+	margin:auto;
+	margin-top:1%;
+	text-align:center;
+	font-size:0px;
+	overflow:hidden;
+}
+
+.over {
+	filter:brightness(90%);
+
+	opacity: 1; 
+
+		
+}
+
+.button {
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+}
